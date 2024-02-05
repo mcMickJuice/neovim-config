@@ -19,4 +19,6 @@ vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = "white"})
 -- shortcut mapleader - https://stackoverflow.com/questions/1764263/what-is-the-leader-in-a-vimrc-file
 vim.g.mapleader = " "
 
-
+-- code folding via treesitter
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
