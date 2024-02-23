@@ -1,6 +1,10 @@
 return {
+	-- lets see what git-blame and gitsigns give me
+	-- {
+	-- 	"tpope/vim-fugitive",
+	-- },
 	{
-		"tpope/vim-fugitive"
+		"f-person/git-blame.nvim",
 	},
 	{
 		"lewis6991/gitsigns.nvim",
