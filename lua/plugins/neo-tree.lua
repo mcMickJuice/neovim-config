@@ -8,7 +8,7 @@ return {
 		-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 	},
 	config = function()
-    -- https://github.com/nvim-neo-tree/neo-tree.nvim/discussions/353#discussioncomment-2717085
+		-- https://github.com/nvim-neo-tree/neo-tree.nvim/discussions/353#discussioncomment-2717085
 		require("neo-tree").setup({
 			filesystem = {
 				filtered_items = {
