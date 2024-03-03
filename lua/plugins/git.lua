@@ -2,7 +2,12 @@ return {
 	{
 		"tpope/vim-fugitive",
 	},
-	{ "tpope/vim-rhubarb" },
+	{
+		"tpope/vim-rhubarb",
+		config = function()
+			vim.keymap.set("n", "<leader>gho", ":.GBrowse<CR>", {})
+		end,
+	},
 	{
 		"f-person/git-blame.nvim",
 	},
