@@ -5,6 +5,8 @@ return {
 	{
 		"tpope/vim-rhubarb",
 		config = function()
+			-- nvim tree disables netrw, which prevents GBrowse to work
+			vim.g.nvim_tree_disable_netrw = 0
 			vim.keymap.set("n", "<leader>gho", ":.GBrowse<CR>", {})
 		end,
 	},
