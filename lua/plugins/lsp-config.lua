@@ -48,6 +48,8 @@ return {
 			--     vim.lsp.buf.format { async = true }
 			--  end, {})
 
+			-- manually configure yaml schemas
+			-- https://www.arthurkoziel.com/json-schemas-in-neovim/
 			lspconfig.yamlls.setup({
 				settings = {
 					yaml = {
