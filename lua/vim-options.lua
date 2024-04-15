@@ -10,10 +10,11 @@ vim.cmd("nnoremap <down> <nop>")
 vim.cmd("nnoremap <left> <nop>")
 vim.cmd("nnoremap <right> <nop>")
 
--- relative line numbers and colors
-vim.cmd("set rnu")
-vim.api.nvim_set_hl(0, "LineNr", { fg = "white" })
-vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "white" })
+-- hybrid line numbers (relative lines, with absolute on current line) and colors
+vim.cmd("set nu rnu")
+vim.cmd("set cursorline")
+-- vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "red" })
+-- vim.api.nvim_set_hl(0, "LineNr", { fg = "white" })
 vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "white" })
 vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "white" })
 
