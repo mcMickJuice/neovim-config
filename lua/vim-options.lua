@@ -29,3 +29,6 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.cmd("inoremap [ []<left>")
 vim.cmd("inoremap { {}<left>")
 vim.cmd("inoremap {<CR> {<CR>}<ESC>O")
+
+-- auto select current files directory
+vim.cmd("set autochdir")
