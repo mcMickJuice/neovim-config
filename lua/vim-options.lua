@@ -26,6 +26,7 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- auto close brackets, quotes etc
-vim.cmd("inoremap [ []<left>")
-vim.cmd("inoremap { {}<left>")
-vim.cmd("inoremap {<CR> {<CR>}<ESC>O")
+-- update 6/14/2024 - auto opening these characters got kinda annoying. Turning off for now
+-- -- vim.cmd("inoremap [ []<left>")
+-- vim.cmd("inoremap { {}<left>")
+-- vim.cmd("inoremap {<CR> {<CR>}<ESC>O")
