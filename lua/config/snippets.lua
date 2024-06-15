@@ -13,6 +13,7 @@ local ts_snippets = {
     "eslint-ignore-any",
     { t("// eslint-disable-next-line @typescript-eslint/no-explicit-any -- "), i(1, "explanation") }
   ),
+  s("ts-expect-error", { t("// @ts-expect-error -- "), i(1, "explanation") }),
 }
 -- add global js_snippets
 ls.add_snippets("javascript", js_snippets)
