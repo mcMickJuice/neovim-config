@@ -24,6 +24,8 @@ vim.g.mapleader = " "
 -- code folding via treesitter
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- disable auto folding, which is really annoying when it happens while coding - https://neovim.io/doc/user/fold.html
+vim.opt.foldenable = false
 
 -- auto close brackets, quotes etc
 -- update 6/14/2024 - auto opening these characters got kinda annoying. Turning off for now
