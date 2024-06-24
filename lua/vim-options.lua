@@ -27,6 +27,10 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- disable auto folding, which is really annoying when it happens while coding - https://neovim.io/doc/user/fold.html
 vim.opt.foldenable = false
 
+-- hide default status bar https://www.reddit.com/r/neovim/comments/17dombf/how_to_entirely_remove_nvims_default_status_line/
+vim.opt.cmdheight = 0
+
+
 -- auto close brackets, quotes etc
 -- update 6/14/2024 - auto opening these characters got kinda annoying. Turning off for now
 -- -- vim.cmd("inoremap [ []<left>")
