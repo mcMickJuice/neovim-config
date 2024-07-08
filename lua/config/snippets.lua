@@ -9,6 +9,8 @@ local js_snippets = {
 	s("eslint-ignore", { t("// eslint-disable-next-line "), i(1, "rule"), t(" -- "), i(2, "explanation") }),
 	s("eslint-ignore-console", { t("// eslint-disable-next-line no-console -- "), i(1, "debugging") }),
 	s("inf", { t("("), i(1, ""), t(") => {"), i(2, ""), t("}") }),
+  s("clog", {t("console.log("), i(1, ""), t(")")}),
+  s("cobjlog", {t("console.log({"), i(1, ""), t("})")}),
 }
 local ts_snippets = {
 	s(
