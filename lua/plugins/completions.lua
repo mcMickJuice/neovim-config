@@ -22,7 +22,7 @@ return {
         ls.jump(1)
       end, { silent = true })
       -- jump back to previous parameter in snippet
-      vim.keymap.set({ "i", "s" }, "<C-J>", function()
+      vim.keymap.set({ "i", "s" }, "<C-H>", function()
         ls.jump(-1)
       end, { silent = true })
       -- I don't know what this does...
