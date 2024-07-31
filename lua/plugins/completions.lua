@@ -99,4 +99,5 @@ return {
       })
     end,
   },
+  -- todo use something like colorbuddy? https://github.com/tjdevries/colorbuddy.nvim?tab=readme-ov-file#example
 }
