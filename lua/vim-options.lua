@@ -28,7 +28,7 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
 
 -- hide default status bar https://www.reddit.com/r/neovim/comments/17dombf/how_to_entirely_remove_nvims_default_status_line/
-vim.opt.cmdheight = 0
+-- vim.opt.cmdheight = 0
 
 
 -- auto close brackets, quotes etc
