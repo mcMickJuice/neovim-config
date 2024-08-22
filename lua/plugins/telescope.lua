@@ -11,6 +11,9 @@ return {
       vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
       vim.keymap.set("n", "<leader>fs", builtin.grep_string, {})
       vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
+      vim.keymap.set("n", "<leader>mp", builtin.man_pages, {})
+      vim.keymap.set("n", "<leader>rg", builtin.registers, {})
+      vim.keymap.set("n", "<leader>fz", builtin.current_buffer_fuzzy_find, {})
 
       require("telescope").setup({
         pickers = {
