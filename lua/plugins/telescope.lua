@@ -22,6 +22,7 @@ return {
 						width = 0.95,
 						height = 0.95,
 					},
+					prompt_prefix = "🔍 ",
 				},
 				pickers = {
 					find_files = {
