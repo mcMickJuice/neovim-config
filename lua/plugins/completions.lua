@@ -65,7 +65,7 @@ return {
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
           { name = "luasnip" }, -- For luasnip users.
-          { name = "nvim_lua" },
+          { name = "nvim_lua" }, -- this doesn't seem to be working...
           { name = "path" },
           { name = "buffer",  keyword_length = 5 },
         }),
