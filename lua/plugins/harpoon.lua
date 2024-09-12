@@ -35,14 +35,22 @@ return {
 						width = 0.6,
 					},
 					sorter = conf.generic_sorter({}),
-          -- how to delete entry from harpoon list
-          -- https://github.com/ThePrimeagen/harpoon/issues/499#issuecomment-2076462687
+					-- how to delete entry from harpoon list
+					-- https://github.com/ThePrimeagen/harpoon/issues/499#issuecomment-2076462687
 					attach_mappings = function(prompt_bufnr, map)
+						-- delete individual harpoon entry
 						map("i", "<C-d>", function()
 							local state = require("telescope.actions.state")
 							local selected_entry = state.get_selected_entry()
 							local current_picker = state.get_current_picker(prompt_bufnr)
 							table.remove(harpoon_files.items, selected_entry.index)
+							current_picker:refresh(finder())
+						end)
+						-- clear all harpoon entries
+						map("i", "<C-c>", function()
+							local state = require("telescope.actions.state")
+							local current_picker = state.get_current_picker(prompt_bufnr)
+							harpoon_files.items = {}
 							current_picker:refresh(finder())
 						end)
 						return true
