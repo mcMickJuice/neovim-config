@@ -20,6 +20,9 @@ return {
 			vim.keymap.set("n", "<leader>mp", builtin.man_pages, {})
 			vim.keymap.set("n", "<leader>rg", builtin.registers, {})
 			vim.keymap.set("n", "<leader>fz", builtin.current_buffer_fuzzy_find, {})
+			vim.keymap.set("n", "<leader>sh", builtin.search_history, {})
+			vim.keymap.set("n", "<leader>ch", builtin.command_history, {})
+			vim.keymap.set("n", "<leader>km", builtin.keymaps, {})
       vim.keymap.set("n", "gr", builtin.lsp_references, {})
 
       -- live_grep_args driven commands
