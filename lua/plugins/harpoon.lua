@@ -6,11 +6,6 @@ return {
 		local harpoon = require("harpoon")
 		harpoon.setup()
 
-		-- FROM harpoon docs - https://github.com/ThePrimeagen/harpoon/tree/harpoon2?tab=readme-ov-file#basic-setup
-		vim.keymap.set("n", "<leader>a", function()
-			harpoon:list():add()
-		end)
-
 		-- basic telescope configuration
 		local conf = require("telescope.config").values
 		local function toggle_telescope(harpoon_files)
@@ -59,31 +54,38 @@ return {
 				:find()
 		end
 
+		-- FROM harpoon docs - https://github.com/ThePrimeagen/harpoon/tree/harpoon2?tab=readme-ov-file#basic-setup
 		vim.keymap.set("n", "<C-e>", function()
 			toggle_telescope(harpoon:list())
 		end, { desc = "Open harpoon window" })
+		--
+		vim.keymap.set("n", "<leader>a", function()
+			harpoon:list():add()
+		end)
 
 		-- IN case I want to hotkey to files in list instead of using the viewer
-		-- vim.keymap.set("n", "<C-h>", function()
+		-- vim.keymap.set("n", "<C-y>", function()
 		-- 	harpoon:list():select(1)
 		-- end)
-		-- vim.keymap.set("n", "<C-t>", function()
+		-- vim.keymap.set("n", "<C-u>", function()
 		-- 	harpoon:list():select(2)
 		-- end)
-		-- vim.keymap.set("n", "<C-n>", function()
+		-- vim.keymap.set("n", "<C-i>", function()
 		-- 	harpoon:list():select(3)
 		-- end)
-		-- vim.keymap.set("n", "<C-s>", function()
+		-- vim.keymap.set("n", "<C-o>", function()
 		-- 	harpoon:list():select(4)
 		-- end)
 
-		-- -- Toggle previous & next buffers stored within Harpoon list
-		-- vim.keymap.set("n", "<C-S-P>", function()
-		-- 	harpoon:list():prev()
-		-- end)
-		-- vim.keymap.set("n", "<C-S-N>", function()
-		-- 	harpoon:list():next()
-		-- end)
+		-- Toggle previous & next buffers stored within Harpoon list
+		vim.keymap.set("n", "<C-r>", function()
+			-- TODO allow for infinite navigation, i.e. if at first item, and I click back,
+			-- navigate to last item
+			harpoon:list():prev({ ui_nav_wrap = true })
+		end)
+		vim.keymap.set("n", "<C-t>", function()
+			harpoon:list():next({ ui_nav_wrap = true })
+		end)
 
 		harpoon:extend({
 			UI_CREATE = function(cx)
