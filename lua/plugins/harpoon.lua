@@ -78,14 +78,14 @@ return {
 		-- end)
 
 		-- Toggle previous & next buffers stored within Harpoon list
-		-- vim.keymap.set("n", "<C-r>", function()
-		-- 	-- TODO allow for infinite navigation, i.e. if at first item, and I click back,
-		-- 	-- navigate to last item
-		-- 	harpoon:list():prev({ ui_nav_wrap = true })
-		-- end)
-		-- vim.keymap.set("n", "<C-t>", function()
-		-- 	harpoon:list():next({ ui_nav_wrap = true })
-		-- end)
+		vim.keymap.set("n", "<C-j>", function()
+			-- TODO allow for infinite navigation, i.e. if at first item, and I click back,
+			-- navigate to last item
+			harpoon:list():prev({ ui_nav_wrap = true })
+		end)
+		vim.keymap.set("n", "<C-k>", function()
+			harpoon:list():next({ ui_nav_wrap = true })
+		end)
 
 		harpoon:extend({
 			UI_CREATE = function(cx)
