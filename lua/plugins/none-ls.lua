@@ -12,6 +12,7 @@ return {
           end,
         }),
         null_ls.builtins.formatting.prettier,
+        null_ls.builtins.diagnostics.golangci_lint,
       },
     })
   end,
