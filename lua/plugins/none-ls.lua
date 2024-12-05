@@ -13,19 +13,27 @@ return {
 		end
 		null_ls.setup({
 			sources = {
+				-- lua
 				null_ls.builtins.formatting.stylua,
+
+				-- javascript, ts, json
 				null_ls.builtins.diagnostics.eslint_d.with({
 					condition = function(utils)
 						return utils.root_has_file({ ".eslintrc.js", ".eslintrc.json", ".eslintrc.cjs" })
 					end,
 				}),
 				null_ls.builtins.formatting.prettier,
+
+				-- go
 				null_ls.builtins.diagnostics.golangci_lint,
 				null_ls.builtins.formatting.gofmt,
+
+				-- sql
 				-- requires pgformatter to be installed locally - https://formulae.brew.sh/formula/pgformatter
 				null_ls.builtins.formatting.pg_format,
 			},
 			on_attach = function(client, bufnr)
+				-- from https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save
 				if client.supports_method("textDocument/formatting") then
 					vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
 					vim.api.nvim_create_autocmd("BufWritePre", {
