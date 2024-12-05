@@ -21,6 +21,7 @@ return {
 				}),
 				null_ls.builtins.formatting.prettier,
 				null_ls.builtins.diagnostics.golangci_lint,
+				null_ls.builtins.formatting.gofmt,
 				-- requires pgformatter to be installed locally - https://formulae.brew.sh/formula/pgformatter
 				null_ls.builtins.formatting.pg_format,
 			},
