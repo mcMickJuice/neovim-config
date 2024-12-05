@@ -23,10 +23,10 @@ return {
 			vim.keymap.set("n", "<leader>sh", builtin.search_history, {})
 			vim.keymap.set("n", "<leader>ch", builtin.command_history, {})
 			vim.keymap.set("n", "<leader>km", builtin.keymaps, {})
-      vim.keymap.set("n", "gr", builtin.lsp_references, {})
+			vim.keymap.set("n", "gr", builtin.lsp_references, {})
 
-      -- live_grep_args driven commands
-      -- https://github.com/nvim-telescope/telescope-live-grep-args.nvim?tab=readme-ov-file#shortcut-functions
+			-- live_grep_args driven commands
+			-- https://github.com/nvim-telescope/telescope-live-grep-args.nvim?tab=readme-ov-file#shortcut-functions
 			local lga_shortcuts = require("telescope-live-grep-args.shortcuts")
 			vim.keymap.set("n", "<leader>fs", lga_shortcuts.grep_word_under_cursor)
 			vim.keymap.set(
@@ -64,7 +64,7 @@ return {
 				},
 				extensions = {
 					live_grep_args = {
-            -- https://github.com/nvim-telescope/telescope-live-grep-args.nvim?tab=readme-ov-file#configuration
+						-- https://github.com/nvim-telescope/telescope-live-grep-args.nvim?tab=readme-ov-file#configuration
 						mappings = { -- extend mappings
 							i = {
 								["<C-k>"] = lga_actions.quote_prompt(),
