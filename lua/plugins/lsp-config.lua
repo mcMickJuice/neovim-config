@@ -23,7 +23,7 @@ return {
 				capabilities = capabilities,
 				settings = {
 					Lua = {
-            -- formatting is done via stylua, set in none-ls config
+						-- formatting is done via stylua, set in none-ls config
 						format = { enable = false },
 					},
 				},
