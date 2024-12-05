@@ -14,7 +14,7 @@ return {
 			require("config.snippets")
 			local ls = require("luasnip")
 			-- see docs for this api - https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md
-			vim.keymap.set({ "i" }, "<C-K", function()
+			vim.keymap.set({ "i" }, "<C-K>", function()
 				ls.expand()
 			end, { silent = true })
 			-- jump to next parameter in snippet
