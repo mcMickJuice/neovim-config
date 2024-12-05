@@ -19,6 +19,10 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local lspconfig = require("lspconfig")
+			-- if an lsp offers formatting capabilities, unless disabled below, both the lsp and none-ls will handle a format call via gf
+			-- for format on save, only none-ls will handle formatting. If I run into an issue where there's conflicting formatters (e.g. stylua vs lua_ls),
+			-- then I need to disable the lsp formatting.
+			-- it would be nice to disable lsp formatting across the board and rely entirely on none-ls for formatting
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 				settings = {
