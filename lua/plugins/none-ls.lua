@@ -3,7 +3,6 @@ return {
 	config = function()
 		local null_ls = require("null-ls")
 		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
 		null_ls.setup({
 			sources = {
 				null_ls.builtins.formatting.stylua,
@@ -24,9 +23,7 @@ return {
 						group = augroup,
 						buffer = bufnr,
 						callback = function()
-							-- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-							-- on later neovim version, you should use vim.lsp.buf.format({ async = false }) instead
-							vim.lsp.buf.formatting_sync()
+							vim.lsp.buf.format({ async = false })
 						end,
 					})
 				end
