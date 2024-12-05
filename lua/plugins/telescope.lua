@@ -37,6 +37,7 @@ return {
 
 			local telescope = require("telescope")
 			local actions = require("telescope.actions")
+			local layout_actions = require("telescope.actions.layout")
 			local lga_actions = require("telescope-live-grep-args.actions")
 
 			telescope.setup({
@@ -47,6 +48,14 @@ return {
 						height = 0.95,
 					},
 					prompt_prefix = "🔍 ",
+					mappings = {
+						i = {
+							["<C-p>"] = layout_actions.toggle_preview,
+						},
+					},
+					preview = {
+						hide_on_startup = true,
+					},
 				},
 				pickers = {
 					find_files = {
