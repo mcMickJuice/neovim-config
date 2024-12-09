@@ -8,6 +8,11 @@ return {
 			view_options = {
 				show_hidden = true,
 			},
+			-- default preview split is left for none floating preview. If I want to set this to the right,
+			-- I can follow what is done here -- https://github.com/stevearc/oil.nvim/issues/454#issuecomment-2244100893
+			float = {
+				preview_split = "right",
+			},
 		})
 		-- https://github.com/stevearc/oil.nvim?tab=readme-ov-file#options
 		vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
