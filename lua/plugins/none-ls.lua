@@ -1,4 +1,5 @@
 return {
+  dependencies = {"nvimtools/none-ls-extras.nvim"},
 	"nvimtools/none-ls.nvim",
 	config = function()
 		local null_ls = require("null-ls")
@@ -17,7 +18,7 @@ return {
 				null_ls.builtins.formatting.stylua,
 
 				-- javascript, ts, json
-				null_ls.builtins.diagnostics.eslint_d.with({
+				require("none-ls.diagnostics.eslint").with({
 					condition = function(utils)
 						return utils.root_has_file({ ".eslintrc.js", ".eslintrc.json", ".eslintrc.cjs" })
 					end,
