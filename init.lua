@@ -11,7 +11,12 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 vim.opt.rtp:prepend(lazypath)
-local opts = {}
 require("vim-options")
 require("autocmd")
-require("lazy").setup("plugins", opts)
+-- tell lazy where to look for plugin files
+require("lazy").setup({
+	spec = {
+		import = "plugins",
+	},
+	checker = { enabled = true },
+})
