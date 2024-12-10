@@ -24,7 +24,14 @@ return {
 			vim.keymap.set("n", "<leader>sh", builtin.search_history, {})
 			vim.keymap.set("n", "<leader>ch", builtin.command_history, {})
 			vim.keymap.set("n", "<leader>km", builtin.keymaps, {})
-			vim.keymap.set("n", "gr", builtin.lsp_references, {})
+			vim.keymap.set("n", "gr", function()
+				builtin.lsp_references({
+					include_declaration = false,
+					-- I'm generally more interested in which file a reference is in than the LOC
+					-- though this usually applies to Segway rather than other smaller codebases
+					fname_width = 70,
+				})
+			end, {})
 
 			-- live_grep_args driven commands
 			-- https://github.com/nvim-telescope/telescope-live-grep-args.nvim?tab=readme-ov-file#shortcut-functions
