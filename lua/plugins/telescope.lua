@@ -10,6 +10,7 @@ return {
 				-- For major updates, this must be adjusted manually.
 				version = "^1.0.0",
 			},
+			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		},
 
 		config = function()
