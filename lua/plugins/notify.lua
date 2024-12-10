@@ -2,6 +2,6 @@ return {
 	"rcarriga/nvim-notify",
 	config = function()
 		vim.notify = require("notify")
-		vim.notify("Welcome to your Text Editor")
+		vim.notify("Hello Mike. Welcome to your Editor")
 	end,
 }
