@@ -24,6 +24,7 @@ return {
 			vim.keymap.set("n", "<leader>sh", builtin.search_history, {})
 			vim.keymap.set("n", "<leader>ch", builtin.command_history, {})
 			vim.keymap.set("n", "<leader>km", builtin.keymaps, {})
+			vim.keymap.set("n", "<leader>qf", builtin.quickfix, {})
 			vim.keymap.set("n", "gr", function()
 				builtin.lsp_references({
 					include_declaration = false,
