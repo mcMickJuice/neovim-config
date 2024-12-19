@@ -39,3 +39,7 @@ vim.cmd("set ignorecase smartcase")
 -- -- vim.cmd("inoremap [ []<left>")
 -- vim.cmd("inoremap { {}<left>")
 -- vim.cmd("inoremap {<CR> {<CR>}<ESC>O")
+
+-- keymaps for quick list cprev and cnext. From teej video - https://www.youtube.com/watch?v=wOdL2T4hANk&ab_channel=TJDeVries
+vim.keymap.set("n", "<C-h>", "<cmd>cprev<CR>")
+vim.keymap.set("n", "<C-l>", "<cmd>cnext<CR>")
