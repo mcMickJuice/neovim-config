@@ -18,6 +18,8 @@ return {
 				null_ls.builtins.formatting.stylua,
 
 				-- javascript, ts, json
+				-- I was experiencing major issues with eslint where undo/redo would cause 10s of node processes to spawn
+				-- eslint_d does not have this issue
 				require("none-ls.diagnostics.eslint_d").with({
 					condition = function(utils)
 						return utils.root_has_file({ ".eslintrc.js", ".eslintrc.json", ".eslintrc.cjs" })
