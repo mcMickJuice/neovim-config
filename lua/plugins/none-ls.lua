@@ -18,7 +18,7 @@ return {
 				null_ls.builtins.formatting.stylua,
 
 				-- javascript, ts, json
-				require("none-ls.diagnostics.eslint").with({
+				require("none-ls.diagnostics.eslint_d").with({
 					condition = function(utils)
 						return utils.root_has_file({ ".eslintrc.js", ".eslintrc.json", ".eslintrc.cjs" })
 					end,
