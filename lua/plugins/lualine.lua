@@ -18,14 +18,20 @@ return {
 				return "Recording @" .. recording_register
 			end
 		end
+		local function buffer_count()
+			local mod = vim.fn.len(vim.fn.getbufinfo({ bufmodified = 1 }))
+			return "Mod:" .. mod
+		end
 		require("lualine").setup({
 			options = {
 				theme = "dracula",
 			},
 			sections = {
+				lualine_b = {},
 				lualine_c = { filename },
 				lualine_x = { show_macro_recording },
-				lualine_y = { "filetype" },
+				lualine_y = { buffer_count, "filetype" },
+				lualine_z = {},
 			},
 		})
 	end,
