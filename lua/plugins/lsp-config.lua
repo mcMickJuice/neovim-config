@@ -53,9 +53,6 @@ return {
 			lspconfig.html.setup({
 				capabilities = capabilities,
 			})
-			-- lspconfig.htmx.setup({
-			-- 	capabilities = capabilities,
-			-- })
 			lspconfig.jsonls.setup({
 				capabilities = capabilities,
 			})
