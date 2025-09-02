@@ -50,3 +50,8 @@ vim.keymap.set("n", "<leader>kd", function()
 	vim.diagnostic.open_float()
 end)
 vim.diagnostic.config({ virtual_text = true })
+
+-- modify copilot chat tab which interferes with copilot
+-- commenting out cuz I don't think this is working
+-- vim.g.copilot_no_tab_map = true
+-- vim.keymap.set("i", "<S-Tab>", 'copilot#Accept("\\<S-Tab>")', { expr = true, replace_keycodes = false })
