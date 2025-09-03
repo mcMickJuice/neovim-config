@@ -22,12 +22,23 @@ return {
 				-- eslint_d does not have this issue
 				require("none-ls.diagnostics.eslint_d").with({
 					condition = function(utils)
-						return utils.root_has_file({ ".eslintrc.js", ".eslintrc.json", ".eslintrc.cjs" })
+						-- maybe make this a pattern to support the myriad of eslint config file naming options?
+						return utils.root_has_file({
+							".eslintrc.js",
+							".eslintrc.json",
+							".eslintrc.cjs",
+							"eslint.config.mjs",
+						})
 					end,
 				}),
 				require("none-ls.code_actions.eslint_d").with({
 					condition = function(utils)
-						return utils.root_has_file({ ".eslintrc.js", ".eslintrc.json", ".eslintrc.cjs" })
+						return utils.root_has_file({
+							".eslintrc.js",
+							".eslintrc.json",
+							".eslintrc.cjs",
+							"eslint.config.mjs",
+						})
 					end,
 				}),
 				null_ls.builtins.formatting.prettier,
