@@ -30,12 +30,11 @@ return {
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			local lspconfig = require("lspconfig")
 			-- if an lsp offers formatting capabilities, unless disabled below, both the lsp and none-ls will handle a format call via gf
 			-- for format on save, only none-ls will handle formatting. If I run into an issue where there's conflicting formatters (e.g. stylua vs lua_ls),
 			-- then I need to disable the lsp formatting.
 			-- it would be nice to disable lsp formatting across the board and rely entirely on none-ls for formatting
-			lspconfig.lua_ls.setup({
+			vim.lsp.config("lua_ls", {
 				capabilities = capabilities,
 				settings = {
 					Lua = {
@@ -44,18 +43,18 @@ return {
 					},
 				},
 			})
-			lspconfig.ts_ls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.gopls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.html.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.jsonls.setup({
-				capabilities = capabilities,
-			})
+			-- lspconfig.ts_ls.setup({
+			-- 	capabilities = capabilities,
+			-- })
+			-- lspconfig.gopls.setup({
+			-- 	capabilities = capabilities,
+			-- })
+			-- lspconfig.html.setup({
+			-- 	capabilities = capabilities,
+			-- })
+			-- lspconfig.jsonls.setup({
+			-- 	capabilities = capabilities,
+			-- })
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
@@ -79,23 +78,23 @@ return {
 
 			-- manually configure yaml schemas
 			-- https://www.arthurkoziel.com/json-schemas-in-neovim/
-			lspconfig.yamlls.setup({
-				settings = {
-					yaml = {
-						validate = true,
-						-- disable the schema store
-						schemaStore = {
-							enable = false,
-							url = "",
-						},
-						-- manually select schemas
-						schemas = {
-							["https://json.schemastore.org/circleciconfig.json"] = "**/.circleci/config.yml",
-							["https://raw.githubusercontent.com/docker/compose/master/compose/config/compose_spec.json"] = "docker-compose*.{yml,yaml}",
-						},
-					},
-				},
-			})
+			-- lspconfig.yamlls.setup({
+			-- 	settings = {
+			-- 		yaml = {
+			-- 			validate = true,
+			-- 			-- disable the schema store
+			-- 			schemaStore = {
+			-- 				enable = false,
+			-- 				url = "",
+			-- 			},
+			-- 			-- manually select schemas
+			-- 			schemas = {
+			-- 				["https://json.schemastore.org/circleciconfig.json"] = "**/.circleci/config.yml",
+			-- 				["https://raw.githubusercontent.com/docker/compose/master/compose/config/compose_spec.json"] = "docker-compose*.{yml,yaml}",
+			-- 			},
+			-- 		},
+			-- 	},
+			-- })
 
 			vim.api.nvim_create_autocmd("FileType", {
 				pattern = "sh",
