@@ -40,7 +40,6 @@ return {
 			"onsails/lspkind.nvim",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-buffer",
-			"tailwind-tools",
 		},
 		config = function()
 			local cmp = require("cmp")
@@ -75,7 +74,6 @@ return {
 				},
 				formatting = {
 					format = lspkind.cmp_format({
-						before = require("tailwind-tools.cmp").lspkind_format,
 						mode = "symbol_text",
 						maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 						-- can also be a function to dynamically calculate max width such as
