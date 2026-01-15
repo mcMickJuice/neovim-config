@@ -43,6 +43,7 @@ return {
 					},
 				},
 			})
+			vim.lsp.enable("biome")
 			-- lspconfig.ts_ls.setup({
 			-- 	capabilities = capabilities,
 			-- })
