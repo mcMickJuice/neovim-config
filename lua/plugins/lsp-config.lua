@@ -43,7 +43,8 @@ return {
 					},
 				},
 			})
-			vim.lsp.enable("biome")
+			-- only enable biome for projects that have a biome config file
+			-- vim.lsp.enable("biome")
 			-- lspconfig.ts_ls.setup({
 			-- 	capabilities = capabilities,
 			-- })

@@ -42,7 +42,7 @@ return {
 					end,
 				}),
 				null_ls.builtins.formatting.prettier,
-				null_ls.builtins.formatting.biome,
+				-- null_ls.builtins.formatting.biome,
 
 				-- go
 				null_ls.builtins.diagnostics.golangci_lint,
