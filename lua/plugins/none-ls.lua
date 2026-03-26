@@ -7,6 +7,7 @@ return {
 		local lsp_formatting = function(bufnr)
 			vim.lsp.buf.format({
 				filter = function(client)
+					-- what if our formatter differs by project? For example, if we're using Biome, we want that to be the formatter.
 					return client.name == "null-ls"
 				end,
 				bufnr = bufnr,
