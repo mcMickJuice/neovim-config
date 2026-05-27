@@ -42,8 +42,16 @@ return {
 						})
 					end,
 				}),
-				null_ls.builtins.formatting.prettier,
-				-- null_ls.builtins.formatting.biome,
+				null_ls.builtins.formatting.prettier.with({
+					condition = function(utils)
+						return utils.root_has_file({ ".prettierrc", ".prettierrc.json" })
+					end,
+				}),
+				null_ls.builtins.formatting.biome.with({
+					condition = function(utils)
+						return utils.root_has_file({ "biome.json" })
+					end,
+				}),
 
 				-- go
 				null_ls.builtins.diagnostics.golangci_lint,
